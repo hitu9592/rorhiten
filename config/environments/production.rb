@@ -80,4 +80,16 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.default_url_options = { host: 'http://hiten-hitenror.rhcloud.com' }
+  config.action_mailer.asset_host = 'http://hiten-hitenror.rhcloud.com'
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address: 'smtp.gmail.com',
+    port: 587,
+    user_name: 'hiten9592@gmail.com',
+    password: '9601198035,
+    authentication: 'plain',
+    enable_starttls_auto: true
+  }
 end
