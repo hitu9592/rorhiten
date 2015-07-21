@@ -7,7 +7,7 @@ gem 'rails', '4.1.4'
 
 # Fix the conflict with the system 'rake':
 gem 'rake', '~> 0.9.6'
-gem 'pg'
+
 # Support for databases and environment.
 # Use 'sqlite3' for testing and development and mysql and postgresql
 # for production.
@@ -55,6 +55,8 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
 
+gem 'sqlite3', :group => [:development, :test]
+gem 'pg', :group => [:production]
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
