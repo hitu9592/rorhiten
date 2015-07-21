@@ -1,0 +1,27 @@
+ <div class="modal-header" >
+	<h1><%=task.new_record? ? 'New Task' : "Editing task #{task.title}"%></h1>
+</div>
+<%= form_for @task, class: 'clearfix', remote:true do |f| %>
+<% if @task.errors.any? %>
+		<small>Error</small>
+		<ul>
+			<% @task.errors.full_messages.each do |message| %>
+				<li><%= message %></li>
+			<% end %>
+		</ul>
+	
+	<% end %>
+<div class"modal-body">
+
+	<%= f.label :title %>
+	<%= f.text_field :title %>
+	<%= f.label :note %>
+	<%= f.text_area :note %>
+	<%= f.label :completed %>
+	<%= f.text_field :completed  ,class: 'datepicker' %>
+</div>
+
+<div class="modal-footer">
+	<%= f.submit 'Save', class: 'btn btn-primary' %>
+</div>
+<% end %>

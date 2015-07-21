@@ -1,0 +1,35 @@
+<% if @tasks.empty? %>
+No result found
+
+<% else %>
+
+<table class="table table-hover table-bordered">
+	<thead>
+		<tr>
+			<th> Title</th>
+			<th>Created at</th>
+			<th>Completed</th>
+
+			<th>Action</th>
+		</tr>
+	</thead>
+	<tbody>
+
+		<% @tasks.each do |task| %>
+		<tr>
+			<td> <%= task.title %></td>
+			<td> <%= task.created_at %> </td>
+			<td> <%= task.completed %></td>
+			<td>
+			<%=		link_to edit_task_path(task) , remote: true do %>
+					<i class='icon-edit'></i>
+			  <% end %>
+			<%=		link_to task_path(task) , remote: true, method: :delete do %>
+					<i class='icon-remove'></i>
+			  <% end %> </td>
+		</tr>
+
+		<% end %>
+	</tbody>
+	<% end %>
+</table> 

@@ -1,0 +1,2 @@
+$('#task-list').html('<%= escape_javascript(render partial: 'pages/task_list', locals: {tasks: @tasks}) %>');
+$('#modal').modal('hide');
